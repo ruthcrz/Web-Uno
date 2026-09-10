@@ -24,22 +24,19 @@ public class MiServlet extends HttpServlet
         out.println("<html>");
         out.println("<body>");
         out.println("<h1>Hola desde Servlet</h1>");
-        out.println("<table border =1>");
-        out.println("<tr>");
-        out.println("<th> ID </th>");
-        out.println("<th> Nombre </th>");
-        out.println("</tr>");
-        out.println("<tr>");
-        out.println("<td>1</td>");
-        out.println("<td>Gerdoc</td>");
-        out.println("</tr>");
-        out.println("<tr>");
-        out.println("<td>2</td>");
-        out.println("<td>Ruth</td>");
-        out.println("</tr>");
-        out.println("</table>");
         out.println("<p>Tomcat 9 + IntelliJ + Maven</p>");
+        out.println("<p>Valor del parámetro 'correo': " + req.getParameter("exampleInputEmail1") + "</p>");
+        out.println("<p>Valor del parámetro 'exampleSelect': " + req.getParameter("exampleSelect") + "</p>");
+        out.println("<p>Valor del parámetro 'area': " + req.getParameter("area") + "</p>");
+        out.println("<p>Valor del parámetro 'turno': " + req.getParameter("turno") + "</p>");
+
         out.println("</body>");
         out.println("</html>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
+        doGet(req, resp);
     }
 }
